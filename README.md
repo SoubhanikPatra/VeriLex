@@ -56,7 +56,7 @@ OPENAI_API_KEY=your_openai_api_key
 ```
 
 Notes:
-- Backend order is controlled by `LLM_BACKENDS` in `config/settings.py` (default: `groq,openai`).
+- Backend order is controlled by `LLM_BACKENDS` (read from environment in `config/settings.py`, default: `groq,openai`).
 - Default vector-store path is `db/chroma_db`.
 
 ## CLI usage
@@ -86,10 +86,10 @@ uvicorn app.api:app --host 0.0.0.0 --port 8000
 ```
 
 Endpoints:
-- `GET /health`
-- `POST /ingest`
-- `POST /query`
-- `POST /chat/turn`
+- `GET /health` — lightweight health check and default persistence path.
+- `POST /ingest` — ingest one PDF (`pdf_path`) or all PDFs from `docs/`.
+- `POST /query` — answer one question from a persisted Chroma collection.
+- `POST /chat/turn` — stateless chat turn with optional caller-provided `history`.
 
 Example:
 
