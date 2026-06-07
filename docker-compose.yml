@@ -1,0 +1,14 @@
+services:
+  verilex:
+    build: .
+    image: verilex:latest
+    ports:
+      - "8000:8000"
+    # Load secrets and provider configuration from your local `.env` file.
+    env_file:
+      - .env
+    volumes:
+      # Mount docs so you can add/update PDFs without rebuilding the image.
+      - ./docs:/app/docs:ro
+      # Persist the vector store on the host when running locally.
+      - ./db/chroma_db:/app/db/chroma_db

@@ -1,0 +1,26 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+verilex/
+
+# Editor / OS noise
+.DS_Store
+.vscode/
+
+# Secrets
+.env
+
+# Runtime artifacts
+chunks_export.json
+rag_results.json
+db/chroma_db/
+
+# Local data and documents
+docs/
+chunks_export.json

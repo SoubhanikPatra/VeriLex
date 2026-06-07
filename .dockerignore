@@ -1,0 +1,11 @@
+.git
+.github
+__pycache__
+*.pyc
+.venv
+verilex
+.env
+db/chroma_db
+chunks_export.json
+rag_results.json
+.vscode
